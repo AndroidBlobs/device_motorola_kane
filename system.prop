@@ -1,0 +1,107 @@
+#
+# from device/samsung/erd9610/system.prop
+#
+#
+# system.prop for erd9610
+#
+
+ro.arch=exynos9610
+#ro.kernel.qemu=1
+#ro.kernel.qemu.gles=2
+persist.demo.hdmirotationlock=false
+
+# Enable navigation keys in prop as we disabled framework-res RRO
+# in vendor/overlay
+qemu.hw.mainkeys=0
+
+#Enabled bootanimation sound play
+persist.sys.bootanim.play_sound=true
+
+## IMS Packet Inital Start flag
+init.svc.vendor.pktrouter=1
+
+#Enable CSC for vendor image
+ro.vendor.cscsupported=1
+
+ril.ecclist=911,112
+ril.ecclist1=911,112
+
+# adoptable storage
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.allow_encrypt_override=true
+
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# End-call tone extra allocted time
+persist.audio.endcall.delay=250
+
+# Expose CFA Config to specific apps
+ro.camera.cfa.packagelist=com.motorola.coresettingsext,com.motorola.camera2,com.motorola.actions
+#
+# from vendor/moto/kane_china/system.prop
+#
+#
+# system.prop for msm8998-64
+#
+
+# IKSWO-90459 fix the bug that can't recognize the sim card.
+# After flash the rom and power on the device first time.
+persist.radio.multisim.config=dsds
+
+# add zui features prop
+persist.radio.flexmap_type=nw_mode
+persist.radio.zui.feature=true
+
+# add volte display prop
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+
+#SmartcardService should be adapted for sim1 and sim2.
+persist.nfc.smartcard.config=SIM1,SIM2
+
+# change rat_on to combine
+persist.vendor.radio.rat_on=combine
+
+# IKSWPRCN-6193: Regard domain as full service within 10 seconds
+persist.vendor.radio.ignore_dom_time=10
+
+# IKSWPRCN-9317/IKSWPRCN-18677: Report codec when screen off
+persist.vendor.radio.report_codec=1
+
+#Enable power save
+persist.vendor.radio.add_power_save=1
+
+# Setting will read these property to show.
+ro.config.zuk.cpuinfo=9609_8_2.2
+
+#add to display HW ID of H201 as N
+ro.zui.hardware.displayid = H201
+
+# locale config
+persist.sys.timezone=Asia/Shanghai
+persist.sys.language=zh
+persist.sys.country=CN
+ro.product.locale.language=zh
+ro.product.locale.region=CN
+
+# disable provision app check
+net.tethering.noprovisioning=true
+
+#add ro.zuk.product.market for lake display name
+ro.zuk.product.market=motorola p50
+
+#add ST config
+ro.zui.version.status=ST
+#add ro.zui.hardware.sku
+ro.zui.hardware.sku=2019CJ4806
+
+#add ro.lenovo.region for OTA
+ro.lenovo.region=prc
+
+# IPSWPRCP-1003: prc no rgb leds support
+ro.config.zui.leds=no_all
+
+#Add Config for CT PCA29-1
+#ro.shenqi.telecom.displayid=1
+
+#
